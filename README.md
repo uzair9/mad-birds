@@ -1,8 +1,8 @@
-# Mad Birds
+# Mad Birds - A 2D Unity & C# Game
 
 Mad Birds is yet another 2D Unity & C# game that I have created to polish my game development skills. It took me ~10 days to learn and implement all the skills required to create this game. However, I did not design the UI art work used in the game. It was obtained from the [Game Courses](https://game.courses/birds) Website.
 
-## What I Learned?
+## What I Learned
 
 While working on this app, I learnt the following techniques of C# and Unity engine.
 
