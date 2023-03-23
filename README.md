@@ -12,8 +12,9 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 
 - **Animations:** Here, we have to add the `Animator` compoenent to our objects to successfully show animations in them. Then, we have to create the animation in Unity using multiple image assets by dragging them together to the hierarchy. Finally, we drag and drop the animation itself to the animator component and set the display mode to `always` to make our objects always switch back and forth, createing an animation effect.
 
-- **Kinematic Body Type:**
+- **Rigid Body Types: Kinematic Vs. Dynamic:** If we set the `Body Type` field of our rigid body to `Kinematics` from `Dynamics`, we can stop the force of gravity from acting on it. This is because Kinematics is that branch of mechanics which disregards the forces acting on the bodies while observing thier motion. So, the bird does not fall downwards anymore according to the principles of physics.
 
-- **Dynamically Getting Components of the Same Object in C# Script:**
+- **Getting Same Vs. Different Object's Components Dynamically in C#:** Rather than dragging and dropping one component into the pointer field of our C# script from the game Engine, we can use the following alternative which is a completely programmatic way of doing the same thing: `GetComponent<Rigidbody2D>()`. If we do it in the `Start( ... )` method, we can easily change the fields in our Rigidbody2D before `Update( ... )` is called in the first frame.
+  However, the syntax for getting another object's components is a little different, as the script sitting in this object is not aware of the other object or its components. So, we tag the other object in oru Unity engine and then use the following syntax: `gameObject.getObjectWithTag("Other's Tag Name").getComponent<Rigidbody2D>();`
 
-- **Dynamically Getting Components of a Different Object in C# Script:**
+- **transform.position Vs. Rigidbody2D.position:** The former returns a Vector3 whereas the latter returns Vector2. Is really annoying to have to set the values of z-axis in 2D, as they literally have no use. So, we use the second option rather than the first one.
