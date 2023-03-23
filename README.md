@@ -1,10 +1,13 @@
 # Mad Birds
 
-## Notes
+Mad Birds is yet another 2D Unity & C# game that I have created to polish my game development skills. It took me ~10 days to learn and implement all the skills required to create this game. However, I did not design the UI art work used in the game. It was obtained from the [Game Courses](https://game.courses/birds) Website.
 
-**Sprite Tiling:** This is like the `background-repeat: 'repeat';` property of CSS. Using sprite tiling, we can repeat the background without having to copy-paste our sprites again and again. For this, we select the `Draw Mode` to `Tile` in our Sprite Renderer. Afterwards, in `Rect Mode` we can drag and repeat the background with ease.
+## What I Learned?
 
-**Layers:** We can use layers to set the visibility of several objects. It is like the `z-index` property of CSS. Here, the layer with a smaller number has a smaller z-index, and, therfore, it will be displayed behind the other layer.
+While working on this app, I learnt the following techniques of C# and Unity engine.
 
-**Animations:** Here, we have to add `Animator` compoenent to the object. Then, we have to create the animation. Finally, we drag and drop it to the animator component and set the mode to `always` to make our objects always switch back and forth to create an animation effect.
+- **Sprite Tiling:** This is like the `background-repeat: 'repeat';` property of CSS. Using sprite tiling, we can repeat the background without having to copy-paste our sprites again and again. For this, we select the `Draw Mode` to `Tile` in our Sprite Renderer component of the bird object. Afterwards, by switching to the `Rect Mode`, we can drag and repeat the background easily.
 
+- **Object Layers:** We can use layers to set the visibility of several objects. It is like the `z-index` property of CSS. The smaller the layer number, the smaller its z-index will be, and, therfore, that object will be displayed behind the other one with a bigger layer number.
+
+- **Animations:** Here, we have to add the `Animator` compoenent to our objects to successfully show animations in them. Then, we have to create the animation in Unity using multiple image assets by dragging them together to the hierarchy. Finally, we drag and drop the animation itself to the animator component and set the display mode to `always` to make our objects always switch back and forth, createing an animation effect.
