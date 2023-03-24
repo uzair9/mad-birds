@@ -19,4 +19,6 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 
 - **transform.position Vs. Rigidbody2D.position:** The former returns a Vector3 whereas the latter returns Vector2. Is really annoying to have to set the values of z-axis in 2D, as they literally have no use. So, we use the second option rather than the first one.
 
-- **Making the Bird Fly:** Using vector2d distance differnet, normalization and adding force on dynamic rigid body.
+- **Making the Bird Fly:** At first, we took the default position of the bird in the `Start( ... )` method. Then, in `OnMouseUp( ... )`, we computed the current position. For computing 2D positions, we used `Rididbody2D.position`. Then, we subtracted both, so that we could get the flying direction and magnitude in 2D vector. Finally, we added force to the object after making its Rigibody2D's body type `Dynamic` from `Kinematic`.
+
+- **Lifecycle Methods:** The Unity engine has several phases in its lifecycle, each with its own set of functions that are automatically called at different points during the game's execution. Here are the main phases and the functions that are called during each of the phases in the official [Unity Docs](https://docs.unity3d.com/Manual/ExecutionOrder.html)
