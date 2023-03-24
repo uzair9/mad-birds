@@ -21,4 +21,6 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 
 - **Making the Bird Fly:** At first, we took the default position of the bird in the `Start( ... )` method. Then, in `OnMouseUp( ... )`, we computed the current position. For computing 2D positions, we used `Rididbody2D.position`. Then, we subtracted both, so that we could get the flying direction and magnitude in 2D vector. Finally, we added force to the object after making its Rigibody2D's body type `Dynamic` from `Kinematic`.
 
-- **Lifecycle Methods:** The Unity engine has several phases in its lifecycle, each with its own set of functions that are automatically called at different points during the game's execution. Here are the main phases and the functions that are called during each of the phases in the official [Unity Docs](https://docs.unity3d.com/Manual/ExecutionOrder.html)
+- **Lifecycle Methods:** The Unity engine has several phases in its lifecycle, each with its own set of functions that are automatically called at different points during the game's execution. Here are the main phases and the functions that are called during each of the phases in the official [Unity Docs.](https://docs.unity3d.com/Manual/ExecutionOrder.html)
+
+- **Serialization of Fields:** If we want some variables from our script to show up in the engine's inspector, we can either add the variable as `public` or we can serialize it using the following syntax to make it visible in Unity: `[SerializeField] accessModifier type identifier;` => `[SerializeField] private float birdForce;`

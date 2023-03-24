@@ -7,6 +7,12 @@ public class Bird : MonoBehaviour
   Rigidbody2D myRigidBody; // Pointer to this object's RigidBody2D component
   SpriteRenderer mySpriteRenderer; // Pointer to this object's SpriteRenderer component
   Vector2 birdDefaultPosition;
+  [SerializeField] float launchSpeed; // Can also keep public to serialize in Unity.
+
+  Bird()
+  {
+    launchSpeed = 500f;
+  }
 
   void Start()
   {
@@ -35,6 +41,6 @@ public class Bird : MonoBehaviour
     Vector2 birdCurrentPosition = myRigidBody.position;
     Vector2 directionToFly = birdDefaultPosition - birdCurrentPosition;
     myRigidBody.bodyType = RigidbodyType2D.Dynamic; // It is kinematic right now; force won't act on it
-    myRigidBody.AddForce(directionToFly * 500f);
+    myRigidBody.AddForce(directionToFly * launchSpeed);
   }
 }
