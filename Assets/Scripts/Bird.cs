@@ -13,24 +13,13 @@ public class Bird : MonoBehaviour
     myRigidBody = GetComponent<Rigidbody2D>(); // Exactly the same as dragging-dropping in the Unity Inspector
     myRigidBody.isKinematic = true;
     birdDefaultPosition = myRigidBody.position;
+
+    mySpriteRenderer = GetComponent<SpriteRenderer>();
   }
 
   void OnMouseDown()
   {
-    mySpriteRenderer = GetComponent<SpriteRenderer>();
     mySpriteRenderer.color = Color.red;
-  }
-
-  void OnMouseUp()
-  {
-    mySpriteRenderer = GetComponent<SpriteRenderer>();
-    mySpriteRenderer.color = Color.white;
-
-    Vector2 birdCurrentPosition = myRigidBody.position;
-    Vector2 directionToFly = birdDefaultPosition - birdCurrentPosition;
-    directionToFly.Normalize();
-    myRigidBody.bodyType = RigidbodyType2D.Dynamic; // It is kinematic right now; force won't act on it
-    myRigidBody.AddForce(directionToFly * 2000);
   }
 
   void OnMouseDrag()
@@ -39,8 +28,13 @@ public class Bird : MonoBehaviour
     transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
   }
 
-  void Update()
+  void OnMouseUp()
   {
+    mySpriteRenderer.color = Color.white;
 
+    Vector2 birdCurrentPosition = myRigidBody.position;
+    Vector2 directionToFly = birdDefaultPosition - birdCurrentPosition;
+    myRigidBody.bodyType = RigidbodyType2D.Dynamic; // It is kinematic right now; force won't act on it
+    myRigidBody.AddForce(directionToFly * 500f);
   }
 }
