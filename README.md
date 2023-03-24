@@ -18,3 +18,5 @@ While working on this app, I learnt the following techniques of C# and Unity eng
   However, the syntax for getting another object's components is a little different, as the script sitting in this object is not aware of the other object or its components. So, we tag the other object in oru Unity engine and then use the following syntax: `gameObject.getObjectWithTag("Other's Tag Name").getComponent<Rigidbody2D>();`
 
 - **transform.position Vs. Rigidbody2D.position:** The former returns a Vector3 whereas the latter returns Vector2. Is really annoying to have to set the values of z-axis in 2D, as they literally have no use. So, we use the second option rather than the first one.
+
+- **Making the Bird Fly:** Using vector2d distance differnet, normalization and adding force on dynamic rigid body.
