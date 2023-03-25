@@ -23,4 +23,6 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 
 - **Lifecycle Methods:** The Unity engine has several phases in its lifecycle, each with its own set of functions that are automatically called at different points during the game's execution. Here are the main phases and the functions that are called during each of the phases in the official [Unity Docs.](https://docs.unity3d.com/Manual/ExecutionOrder.html)
 
-- **Serialization of Fields:** If we want some variables from our script to show up in the engine's inspector, we can either add the variable as `public` or we can serialize it using the following syntax to make it visible in Unity: `[SerializeField] accessModifier type identifier;` => `[SerializeField] private float birdForce;`
+- **Field Serialization:** If we want some variables from our script to show up in the engine's inspector, we can either add the variable as `public` or we can serialize it using the following syntax to make it visible in Unity: `[SerializeField] accessModifier type identifier;` => `[SerializeField] private float birdForce;`
+
+- **Co-Routines:** Hello!

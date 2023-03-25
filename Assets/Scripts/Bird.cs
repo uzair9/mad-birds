@@ -43,4 +43,28 @@ public class Bird : MonoBehaviour
     myRigidBody.bodyType = RigidbodyType2D.Dynamic; // It is kinematic right now; force won't act on it
     myRigidBody.AddForce(directionToFly * launchSpeed);
   }
+
+
+  void OnCollisionEnter2D(Collision2D collisionInfo)
+  {
+    StartCoroutine(WaitAndResetBird(2));
+  }
+
+  void OnBecameInvisible()
+  {
+    StartCoroutine(WaitAndResetBird(0.5f));
+  }
+
+  IEnumerator WaitAndResetBird(float waitingTime)
+  {
+    yield return new WaitForSeconds(waitingTime);
+    resetBird();
+  }
+
+  void resetBird()
+  {
+    myRigidBody.position = birdDefaultPosition;
+    myRigidBody.velocity = Vector2.zero;
+    myRigidBody.bodyType = RigidbodyType2D.Kinematic;
+  }
 }
