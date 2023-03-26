@@ -31,7 +31,13 @@ public class Bird : MonoBehaviour
   void OnMouseDrag()
   {
     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+
+    if (mousePosition.x > birdDefaultPosition.x)
+    {
+      mousePosition.x = birdDefaultPosition.x;
+    }
+
+    myRigidBody.position = mousePosition;
   }
 
   void OnMouseUp()
@@ -43,7 +49,6 @@ public class Bird : MonoBehaviour
     myRigidBody.bodyType = RigidbodyType2D.Dynamic; // It is kinematic right now; force won't act on it
     myRigidBody.AddForce(directionToFly * launchSpeed);
   }
-
 
   void OnCollisionEnter2D(Collision2D collisionInfo)
   {
