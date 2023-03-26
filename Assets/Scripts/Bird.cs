@@ -8,10 +8,12 @@ public class Bird : MonoBehaviour
   SpriteRenderer mySpriteRenderer; // Pointer to this object's SpriteRenderer component
   Vector2 birdDefaultPosition;
   [SerializeField] float launchSpeed; // Can also keep public to serialize in Unity.
+  [SerializeField] float maxDragDistance; // Can also keep public to serialize in Unity.
 
   Bird()
   {
     launchSpeed = 500f;
+    maxDragDistance = 6;
   }
 
   void Start()
@@ -31,13 +33,14 @@ public class Bird : MonoBehaviour
   void OnMouseDrag()
   {
     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    Vector2 desiredPosition = mousePosition;
 
-    if (mousePosition.x > birdDefaultPosition.x)
+    if (desiredPosition.x > birdDefaultPosition.x)
     {
-      mousePosition.x = birdDefaultPosition.x;
+      desiredPosition.x = birdDefaultPosition.x;
     }
 
-    myRigidBody.position = mousePosition;
+    myRigidBody.position = desiredPosition;
   }
 
   void OnMouseUp()
