@@ -46,3 +46,9 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 - **Co-Routines:** Coroutines are a way for us in Unity to run long, tideous tasks in a non-blocking fashion using the concept of "generator functions". This allows for more efficient use of resources, as other tasks can be executed in parallel.
   <br> <br>
   Coroutines in Unity run asynchronously, but not in a separate thread. When a coroutine is started, it runs in parallel with the rest of the code in the game, allowing for non-blocking operations and more complex behaviors. However, the instructions within the coroutine itself run synchronously, meaning that it executes its instructions in order, one after another, without interrupting or overlapping with other coroutines or code.
+
+<br>
+
+- **The Particle System:** Start delay, start on awake, world simulation (for parent independence, size over lifetime, etc.)
+
+Attaching it with the script to dynamically play it when the monster dies
