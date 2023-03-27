@@ -4,25 +4,40 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+  Camera mainCamera;
+
   Rigidbody2D myRigidBody; // Pointer to this object's RigidBody2D component
   SpriteRenderer mySpriteRenderer; // Pointer to this object's SpriteRenderer component
   Vector2 birdDefaultPosition;
   [SerializeField] float launchSpeed; // Can also keep public to serialize in Unity.
-  [SerializeField] float maxDragDistance; // Can also keep public to serialize in Unity.
-
-  Bird()
-  {
-    launchSpeed = 500f;
-    maxDragDistance = 6;
-  }
 
   void Start()
   {
+    launchSpeed = 500f;
+    mainCamera = Camera.main;
+
     myRigidBody = GetComponent<Rigidbody2D>(); // Exactly the same as dragging-dropping in the Unity Inspector
     myRigidBody.isKinematic = true;
     birdDefaultPosition = myRigidBody.position;
 
     mySpriteRenderer = GetComponent<SpriteRenderer>();
+  }
+
+  void setLeftBoundary()
+  {
+    Vector2 objectPosition = myRigidBody.position;
+    float objectWidth = mySpriteRenderer.bounds.size.x;
+
+    float leftBoundary = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + (objectWidth / 2);
+    float rightBoundary = mainCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - (objectWidth / 2);
+    objectPosition.x = Mathf.Clamp(objectPosition.x, leftBoundary, rightBoundary);
+
+    myRigidBody.position = objectPosition;
+  }
+
+  void Update()
+  {
+    setLeftBoundary();
   }
 
   void OnMouseDown()
@@ -33,14 +48,15 @@ public class Bird : MonoBehaviour
   void OnMouseDrag()
   {
     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    Vector2 desiredPosition = mousePosition;
+    myRigidBody.position = setRightBoundary(mousePosition);
+  }
 
-    if (desiredPosition.x > birdDefaultPosition.x)
-    {
-      desiredPosition.x = birdDefaultPosition.x;
-    }
+  Vector2 setRightBoundary(Vector2 mousePosition)
+  {
+    if (mousePosition.x > birdDefaultPosition.x)
+      mousePosition.x = birdDefaultPosition.x;
 
-    myRigidBody.position = desiredPosition;
+    return mousePosition;
   }
 
   void OnMouseUp()
@@ -76,3 +92,4 @@ public class Bird : MonoBehaviour
     myRigidBody.bodyType = RigidbodyType2D.Kinematic;
   }
 }
+
