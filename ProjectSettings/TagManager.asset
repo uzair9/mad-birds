@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Bird
-  - 
+  - Monster
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Monster
+    uniqueID: 1161988189
     locked: 0
