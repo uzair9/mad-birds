@@ -50,3 +50,7 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 <br>
 
 - **The Particle System:** I also interacted with the built-in particle system. Here, when the monster dies, we make some "smoke" come out of its head. I added 0 start delay to the effect, stopped the effect from running on Awake( ... ) method of the component and shrunk its size over its lifetime. I also made its simulation property to "Local" to ensure the animation effect remains stuck to the bird. Finally, in C#, I added the reference `ref` to this particle system and attached it to our monster. Later, on collision, run the following code to play the death effects: `ref.play().`
+
+<br>
+
+- **Level Progression:** I also learnt how to progress levels in the game. For this, I created multiple scenes in the Unity and used programming in C# to manage those levels.
