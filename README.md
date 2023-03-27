@@ -49,6 +49,4 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 
 <br>
 
-- **The Particle System:** Start delay, start on awake, world simulation (for parent independence, size over lifetime, etc.)
-
-Attaching it with the script to dynamically play it when the monster dies
+- **The Particle System:** I also interacted with the built-in particle system. Here, when the monster dies, we make some "smoke" come out of its head. I added 0 start delay to the effect, stopped the effect from running on Awake( ... ) method of the component and shrunk its size over its lifetime. I also made its simulation property to "Local" to ensure the animation effect remains stuck to the bird. Finally, in C#, I added the reference `ref` to this particle system and attached it to our monster. Later, on collision, run the following code to play the death effects: `ref.play().`
