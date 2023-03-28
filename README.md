@@ -53,4 +53,6 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 
 <br>
 
-- **Level Progression:** I also learnt how to progress levels in the game. For this, I created multiple scenes in the Unity and used programming in C# to manage those levels.
+- **Level Progression:** I also learnt how to progress levels in the game. For this, I created multiple scenes in the Unity engine and added them to the project build settings. Afterwards, I added empty game objects to those scenes and attached with them LevelController script components. Programmatically, using `UnityEngine.SceneManagement`'s object `SceneManager.LoadScene(nextSceneName)` was used to progress dynamically to the next scene when all the Monsters is this scene had died.
+  <br>
+  It was fun learning how scenes could be managed and progressed to give an illusion of the next game level.

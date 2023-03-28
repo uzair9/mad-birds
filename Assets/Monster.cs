@@ -7,7 +7,7 @@ public class Monster : MonoBehaviour
   [SerializeField] Sprite deadSprite;
   [SerializeField] ParticleSystem particles;
   SpriteRenderer mySpriteRenderer;
-  bool isDead = false;
+  public bool isDead = false;
 
   void Start()
   {
@@ -26,7 +26,14 @@ public class Monster : MonoBehaviour
         isDead = true;
         mySpriteRenderer.sprite = deadSprite;
         particles.Play();
+        StartCoroutine((hideMonster()));
       }
     }
+  }
+
+  IEnumerator hideMonster()
+  {
+    yield return new WaitForSeconds(1.5f);
+    gameObject.SetActive(false);
   }
 }
