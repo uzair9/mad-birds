@@ -1,8 +1,14 @@
-# Mad Birds - A 2D Unity & C# Game
+# Mad Birds &mdash; A 2D Unity & C# Game
 
 Mad Birds is yet another 2D Unity & C# game that I have created to polish my game development skills. It took me ~10 days to learn and implement all the skills required to create this game. However, I did not design the UI art work used in the game. It was obtained from the [Game Courses](https://game.courses/birds) Website.
 
-## What I Learned
+## Project Timeline & Teaching Credits
+
+It took me around ~7 days to learn the basics of the Unity engine and C# scripting from this amazing YouTube tutorial: [How to Make a Game - Unity Beginner Tutorial - New Version!](https://www.youtube.com/watch?v=Lu76c85LhGY) This excellent course taught me a LOT about Unity & C# basics for 2D game development. As I created the game, I also kept on documenting my notes in this file.
+<br>
+Go on! Have a look at my notes yourself!
+
+## Learning Notes
 
 While working on this app, I learnt the following techniques of C# and Unity engine. These are just my personal notes; they are there for me to come back to for revision purposes. However, you are more than welcome too to give my notes a go!
 
@@ -44,7 +50,7 @@ While working on this app, I learnt the following techniques of C# and Unity eng
 <br>
 
 - **Co-Routines:** Coroutines are a way for us in Unity to run long, tideous tasks in a non-blocking fashion using the concept of "generator functions". This allows for more efficient use of resources, as other tasks can be executed in parallel.
-  <br> <br>
+  <br>
   Coroutines in Unity run asynchronously, but not in a separate thread. When a coroutine is started, it runs in parallel with the rest of the code in the game, allowing for non-blocking operations and more complex behaviors. However, the instructions within the coroutine itself run synchronously, meaning that it executes its instructions in order, one after another, without interrupting or overlapping with other coroutines or code.
 
 <br>
