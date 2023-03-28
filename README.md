@@ -1,15 +1,17 @@
 # Mad Birds &mdash; A 2D Unity & C# Game
 
+
+## Project Overview
 Mad Birds is yet another 2D Unity & C# game that I have created to polish my game development skills. It took me ~10 days to learn and implement all the skills required to create this game. However, I did not design the UI art work used in the game. It was obtained from the [Game Courses](https://game.courses/birds) Website.
 
-## Project Timeline & Teaching Credits
 
-It took me around ~7 days to learn the basics of the Unity engine and C# scripting from this amazing YouTube tutorial: [How to Make a Game - Unity Beginner Tutorial - New Version!](https://www.youtube.com/watch?v=Lu76c85LhGY) This excellent course taught me a LOT about Unity & C# basics for 2D game development. As I created the game, I also kept on documenting my notes in this file.
+## Project Timeline & Teaching Credits
+It took me around ~10 days to learn the basics of the Unity engine and C# scripting from this amazing YouTube tutorial: [How to Make a Game - Unity Beginner Tutorial - New Version!](https://www.youtube.com/watch?v=Lu76c85LhGY) This excellent course taught me a LOT about Unity & C# basics for 2D game development. As I created the game, I also kept on documenting my notes in this file.
 <br>
 Go on! Have a look at my notes yourself!
 
-## Learning Notes
 
+## Learning Notes
 While working on this app, I learnt the following techniques of C# and Unity engine. These are just my personal notes; they are there for me to come back to for revision purposes. However, you are more than welcome too to give my notes a go!
 
 - **Sprite Tiling:** This is like the `background-repeat: 'repeat';` property of CSS. Using sprite tiling, we can repeat the background without having to copy-paste our sprites again and again. For this, we select the `Draw Mode` to `Tile` in our Sprite Renderer component of the bird object. Afterwards, by switching to the `Rect Mode`, we can drag and repeat the background easily.
