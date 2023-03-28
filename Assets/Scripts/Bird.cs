@@ -71,12 +71,18 @@ public class Bird : MonoBehaviour
 
   void OnCollisionEnter2D(Collision2D collisionInfo)
   {
-    StartCoroutine(WaitAndResetBird(2));
+    if (gameObject.activeSelf)
+    {
+      StartCoroutine(WaitAndResetBird(2));
+    }
   }
 
   void OnBecameInvisible()
   {
-    StartCoroutine(WaitAndResetBird(0.5f));
+    if (gameObject.activeSelf)
+    {
+      StartCoroutine(WaitAndResetBird(0.5f));
+    }
   }
 
   IEnumerator WaitAndResetBird(float waitingTime)
