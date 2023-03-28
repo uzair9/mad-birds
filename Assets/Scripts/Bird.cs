@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
   Camera mainCamera;
-
   Rigidbody2D myRigidBody; // Pointer to this object's RigidBody2D component
   SpriteRenderer mySpriteRenderer; // Pointer to this object's SpriteRenderer component
   Vector2 birdDefaultPosition;
