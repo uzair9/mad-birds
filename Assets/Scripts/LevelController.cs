@@ -7,6 +7,8 @@ public class LevelController : MonoBehaviour
 {
   Monster[] monsters;
   [SerializeField] string nextLevelName;
+  [SerializeField] GameObject gameFinished;
+  public bool isGameOver = false;
 
   void OnEnable()
   {
@@ -17,7 +19,15 @@ public class LevelController : MonoBehaviour
   {
     if (areMonstersDead())
     {
-      SceneManager.LoadScene(nextLevelName);
+      if (nextLevelName != "GameFinished")
+      {
+        SceneManager.LoadScene(nextLevelName);
+      }
+      else
+      {
+        isGameOver = true;
+        gameFinished.SetActive(true);
+      }
     }
   }
 

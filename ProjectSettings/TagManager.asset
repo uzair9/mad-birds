@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Crate
   - Monster
+  - GameFinished
+  - LevelControllerTag
   layers:
   - Default
   - TransparentFX
